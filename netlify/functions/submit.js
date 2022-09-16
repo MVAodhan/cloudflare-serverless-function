@@ -1,5 +1,6 @@
 const redis = require('redis');
 require('dotenv').config();
+require('dotenv').config();
 exports.handler = async function (event, context) {
   var client = redis.createClient({
     host: `${process.env.UPSTASH_ENDPOINT}`,

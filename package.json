@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MVAodhan/cloudflare-serverless-function#readme",
   "dependencies": {
+    "dotenv": "^16.0.2",
     "redis": "^4.3.1"
   }
 }
