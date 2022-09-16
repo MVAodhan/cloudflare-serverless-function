@@ -1,9 +1,11 @@
-const Redis = require('ioredis');
+const redis = require('redis');
 require('dotenv').config();
 exports.handler = async function (event, context) {
-  let client = new Redis(
-    `redis://:${process.env.UPSTASH_PASSWORD}${process.env.UPSTASH_ENDPOINT}:${process.env.UPSTASH_PORT}`
-  );
+  var client = redis.createClient({
+    host: `${process.env.UPSTASH_ENDPOINT}`,
+    port: `${process.env.UPSTASH_PORT}`,
+    password: `${process.env.UPSTASH_PASSWORD}`,
+  });
 
   let url = event.body;
   const splitArray = url.split('=');
